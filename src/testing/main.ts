@@ -42,7 +42,8 @@ class Game {
     }
 }
 
-class Team {
+
+export class Team {
     static numberOfteam: number = 0; 
     public id: number;
     public totalPoint: number =0;
@@ -56,8 +57,7 @@ class Team {
 
 }
 
-
-type Card = {
+export type Card = {
     [index: string] :string| number | undefined
     id: number ;
     title: string;
@@ -66,22 +66,5 @@ type Card = {
 }
 
 
-const testGame:Game = new Game();
 
-const team1:Team = new Team();
-
-testGame.addCard("Kraken", "Monster of the Sea",3)
-testGame.addCard("The Nanny", "Funny lady from a sitcom")
-
-testGame.addTeam(team1);
-
-console.log(testGame.getActiveCards())
-
-console.log(team1.totalPoint)
-team1.updateScore(testGame.activeCards[0])
-console.log(team1.totalPoint)
-
-testGame.removeCardByID(2)
-
-console.log(testGame.activeCards)
 

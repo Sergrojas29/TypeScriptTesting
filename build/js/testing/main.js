@@ -1,11 +1,11 @@
-"use strict";
 class Game {
+    static numOfCards = 0;
+    teams = [];
+    round = 0;
+    roundTime = 30;
+    activeCards = [];
+    usedCards = [];
     constructor() {
-        this.teams = [];
-        this.round = 0;
-        this.roundTime = 30;
-        this.activeCards = [];
-        this.usedCards = [];
     }
     addTeam(newteam) {
         this.teams.push(newteam);
@@ -40,26 +40,15 @@ class Game {
         return this.usedCards;
     }
 }
-Game.numOfCards = 0;
-class Team {
+export class Team {
+    static numberOfteam = 0;
+    id;
+    totalPoint = 0;
+    cards = [];
     constructor() {
-        this.totalPoint = 0;
-        this.cards = [];
         this.id = ++Team.numberOfteam;
     }
     updateScore(acuiredCard) {
         this.totalPoint += acuiredCard.point;
     }
 }
-Team.numberOfteam = 0;
-const testGame = new Game();
-const team1 = new Team();
-testGame.addCard("Kraken", "Monster of the Sea", 3);
-testGame.addCard("The Nanny", "Funny lady from a sitcom");
-testGame.addTeam(team1);
-console.log(testGame.getActiveCards());
-console.log(team1.totalPoint);
-team1.updateScore(testGame.activeCards[0]);
-console.log(team1.totalPoint);
-testGame.removeCardByID(2);
-console.log(testGame.activeCards);

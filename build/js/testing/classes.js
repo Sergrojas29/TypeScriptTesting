@@ -1,5 +1,10 @@
 "use strict";
 class Coder {
+    name;
+    music;
+    age;
+    lang;
+    secondLang; //Create but no dont initailze
     constructor(name, music, age, //private need a get() function
     lang = 'Typescript' // Default value
     ) {
@@ -25,6 +30,7 @@ console.log(Dave.secondLang);
 // tsc --watch  //!This continuously monitors your TypeScript files for changes and automatically recompiles them whenever a change is detected.
 console.log(`Hello I'm ${Dave.name} and I'm ${Dave.getAge()} years old`);
 class WebDev extends Coder {
+    computer;
     constructor(computer, name, music, age) {
         super(name, music, age);
         this.computer = computer;
